@@ -7,8 +7,6 @@ import { Ingredient } from './shared/ingredient.model';
 })
 export class RecipeService {
 
-  selectedRecipe = new EventEmitter<Recipe>();
-
   private recipes: Recipe[] = [
     new Recipe('Zucchini Pancake', 'This is simply a test', 'https://static01.nyt.com/images/2019/08/07/dining/el-zucchini-pancakes/merlin_158856510_3c13b817-982c-41a4-999d-21036ee49f57-articleLarge.jpg',
       [

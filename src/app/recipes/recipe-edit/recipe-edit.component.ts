@@ -20,7 +20,7 @@ export class RecipeEditComponent implements OnInit {
       (params['id']) ? this.editMode = true :  this.editMode = false;
       console.log(`Edit mode: ${this.editMode}`);
       if (this.editMode) {
-        let routerRecipe = this.router.snapshot.params;
+        const routerRecipe = this.router.snapshot.params;
         this.recipe = new Recipe(routerRecipe._name, routerRecipe._description, routerRecipe._imagePath, routerRecipe._ingredients);
         console.log(this.recipe);
       }
