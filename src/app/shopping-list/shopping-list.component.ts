@@ -1,9 +1,6 @@
 import { Ingredient } from './../shared/ingredient.model';
-import { Component, OnInit, NgModule, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ShoppingListService } from '../shopping-list.service';
-import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 @Component({
