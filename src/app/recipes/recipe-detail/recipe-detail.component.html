@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-3 polaroid img-container">
+        <img [src]="recipe.imagePath" alt="Norway" style="max-width:300px">
+    </div>
+</div>
+
+<!-- <div class="polaroid">
+    <img [src]="recipe.imagePath" alt="Paris" style="width:40%">
+</div> -->
+
+<br>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1 *ngIf=!recipe>Recipe Name</h1>
+        <h1 *ngIf=recipe>{{recipe.name}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div  class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Manage Recipe
+            </button>
+            <div class="dropdown-menu">
+                <a (click)="addToShopping()" class="dropdown-item">To Shopping List</a>
+                <a (click)="toEditRecipe()" class="dropdown-item">Edit Recipe</a>
+                <a class="dropdown-item">Delete Recipe</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div *ngIf=!recipe class="col-xs-12">
+        Description
+    </div>
+
+    <div *ngIf=recipe class="col-xs-12">
+        {{recipe.description}}
+    </div>
+</div>
+
+<div class="row">
+        <div class="col-md-12">
+            <div class="list-group">
+                <a *ngFor="let ingredient of recipe.ingredients"
+                    class="list-group-item list-group-item-action">
+                    {{ingredient.name}} {{ingredient.amount}}
+                </a>
+            </div>
+        </div>
+</div>

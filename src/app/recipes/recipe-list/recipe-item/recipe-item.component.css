@@ -1,0 +1,12 @@
+a:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px 0 rgba(131, 125, 125, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+
+}
+
+a:active{
+    color: black;
+}
+
