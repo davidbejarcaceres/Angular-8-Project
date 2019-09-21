@@ -16,15 +16,14 @@ export class RecipeEditComponent implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe( (params: Params) => {
-      this.id = +params['id'];      
+      this.id = +params['id'];
       (params['id']) ? this.editMode = true :  this.editMode = false;
       console.log(`Edit mode: ${this.editMode}`);
       if (this.editMode) {
-        var routerRecipe = this.router.snapshot.params;
+        let routerRecipe = this.router.snapshot.params;
         this.recipe = new Recipe(routerRecipe._name, routerRecipe._description, routerRecipe._imagePath, routerRecipe._ingredients);
         console.log(this.recipe);
       }
-      
     });
   }
 
