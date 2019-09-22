@@ -11,6 +11,8 @@ import { NgForm } from '@angular/forms';
 
 export class ShoppingEditComponent implements OnInit {
 
+  nameIngredient: String = '';
+
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
