@@ -9,15 +9,15 @@
                     </div>
                     <div class="col-sm-5">
                         <label for="amount">Amount</label>
-                        <input ngModel #inputAmount="ngModel" type="number" class="form-control" name="inputAmount" id="inputAmount"
+                        <input  ngModel #inputAmount="ngModel" required type="number" min="1" class="form-control" name="inputAmount" id="inputAmount"
                             placeholder="Amount">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-sm-6">
-                        <button style="margin-right: 10px" type="submit" class="btn btn-success">Add</button>
-                        <button style="margin-right: 10px" type="submit" class="btn btn-danger">Delete</button>
-                        <button type="submit" class="btn btn-primary">Clear</button>
+                    <div class="col-sm-12">
+                        <button type="submit" [disabled]="!Ingredient.valid" style="margin-right: 10px" class="btn btn-success">{{ editMode ? 'Update' : 'Add' }}</button>
+                        <button type="button" *ngIf="editMode" (click)="deleteRecipe()" style="margin-right: 10px" class="btn btn-danger">Delete</button>
+                        <button type="reset" (click)="clearForm()" class="btn btn-primary">Clear</button>
                     </div>
                 </div>
             </form>
